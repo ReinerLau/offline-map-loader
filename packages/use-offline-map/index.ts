@@ -1,3 +1,6 @@
-export function test() {
-  console.log("test");
-}
+export const useOfflineMap = () => {
+  const test = "test";
+  return {
+    test,
+  };
+};

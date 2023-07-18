@@ -5,12 +5,12 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Launch via PNPM",
+      "name": "Launch Chrome",
       "request": "launch",
-      "runtimeArgs": ["run-script", "tsnd", "./examples/normal/index"],
-      "runtimeExecutable": "pnpm",
-      "skipFiles": ["<node_internals>/**"],
-      "type": "node"
+      "type": "chrome",
+      "runtimeExecutable": "canary",
+      "url": "http://localhost:5173",
+      "webRoot": "${workspaceFolder}"
     }
   ]
 }
