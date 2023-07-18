@@ -8,5 +8,10 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@types/maptalks": "^0.49.3",
+    "maptalks": "1.0.0-rc.23",
+    "vue": "^3.3.4"
+  }
 }

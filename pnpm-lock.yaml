@@ -67,7 +67,17 @@ importers:
         specifier: ^1.6.5
         version: registry.npmmirror.com/vue-tsc@1.6.5(typescript@5.0.4)
 
-  packages/use-offline-map: {}
+  packages/use-offline-map:
+    dependencies:
+      '@types/maptalks':
+        specifier: ^0.49.3
+        version: registry.npmmirror.com/@types/maptalks@0.49.3
+      maptalks:
+        specifier: 1.0.0-rc.23
+        version: registry.npmmirror.com/maptalks@1.0.0-rc.23
+      vue:
+        specifier: ^3.3.4
+        version: registry.npmmirror.com/vue@3.3.4
 
 packages:
 
@@ -826,6 +836,20 @@ packages:
       '@jridgewell/sourcemap-codec': registry.npmmirror.com/@jridgewell/sourcemap-codec@1.4.15
     dev: true
 
+  registry.npmmirror.com/@maptalks/feature-filter@1.3.0:
+    resolution: {integrity: sha512-O6GcFzPuCbz6bO4TNBnmP8VunS0GexTzZ4m36A4HbYQICY1cplpFgntX2fyB/TY3cZrFRGoeMePBeMZFMOOhcQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@maptalks/feature-filter/-/feature-filter-1.3.0.tgz}
+    name: '@maptalks/feature-filter'
+    version: 1.3.0
+    dev: false
+
+  registry.npmmirror.com/@maptalks/function-type@1.3.1:
+    resolution: {integrity: sha512-VoKE84IDhAn1Co25IVggptNzZdQ3fPUCRlw8+SBxyW8ATT45kFDqYECktqnNW445h44tT+3Ge5fyP+dHVCDP6g==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@maptalks/function-type/-/function-type-1.3.1.tgz}
+    name: '@maptalks/function-type'
+    version: 1.3.1
+    dependencies:
+      colorin: registry.npmmirror.com/colorin@0.2.0
+    dev: false
+
   registry.npmmirror.com/@nodelib/fs.scandir@2.1.5:
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz}
     name: '@nodelib/fs.scandir'
@@ -894,6 +918,12 @@ packages:
     name: '@types/json-schema'
     version: 7.0.12
     dev: true
+
+  registry.npmmirror.com/@types/maptalks@0.49.3:
+    resolution: {integrity: sha512-cek7SpZhfuBwx+vIMyzmGSwe2PW9vEUtd0FWzP6ucUP2TS0jqK0fqlUSMu1HQ9rOxYPFWipP7pHLwsXmKZlOSA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/maptalks/-/maptalks-0.49.3.tgz}
+    name: '@types/maptalks'
+    version: 0.49.3
+    dev: false
 
   registry.npmmirror.com/@types/node@18.16.17:
     resolution: {integrity: sha512-QAkjjRA1N7gPJeAP4WLXZtYv6+eMXFNviqktCDt4GLcmCugMr5BcRHfkOjCQzvCsnMp+L79a54zBkbw356xv9Q==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/node/-/node-18.16.17.tgz}
@@ -1608,6 +1638,12 @@ packages:
     version: 1.1.4
     dev: true
 
+  registry.npmmirror.com/colorin@0.2.0:
+    resolution: {integrity: sha512-sdsDdBwR1PF5fMABS1p7tyy0LRk4mAkw4BUI+zjXlmhQ9nQnjnHOOe9e099F4FxfJl0DHCbvgabR2w4/zTajyw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/colorin/-/colorin-0.2.0.tgz}
+    name: colorin
+    version: 0.2.0
+    dev: false
+
   registry.npmmirror.com/concat-map@0.0.1:
     resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/concat-map/-/concat-map-0.0.1.tgz}
     name: concat-map
@@ -2150,6 +2186,12 @@ packages:
     dependencies:
       is-callable: registry.npmmirror.com/is-callable@1.2.7
     dev: true
+
+  registry.npmmirror.com/frustum-intersects@0.1.0:
+    resolution: {integrity: sha512-W0S6dmX5LJLtamimyuKhvbkpDTm5eVfMgk4X9yXNyWQ1zZ/cMm0PZoeX9Pm0tL302l+erQVrdfRGhV3ILfeTeQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/frustum-intersects/-/frustum-intersects-0.1.0.tgz}
+    name: frustum-intersects
+    version: 0.1.0
+    dev: false
 
   registry.npmmirror.com/fs.realpath@1.0.0:
     resolution: {integrity: sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/fs.realpath/-/fs.realpath-1.0.0.tgz}
@@ -2756,6 +2798,19 @@ packages:
     version: 1.3.6
     dev: true
 
+  registry.npmmirror.com/maptalks@1.0.0-rc.23:
+    resolution: {integrity: sha512-m6JLZZQb2LIK+7uTNCN+2EV5HNUurqUSm/1jiInaxuCF0LC93XkYJoaFO8JEH8+0OBpHEfmCXb4ESFhzdJoZGw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/maptalks/-/maptalks-1.0.0-rc.23.tgz}
+    name: maptalks
+    version: 1.0.0-rc.23
+    dependencies:
+      '@maptalks/feature-filter': registry.npmmirror.com/@maptalks/feature-filter@1.3.0
+      '@maptalks/function-type': registry.npmmirror.com/@maptalks/function-type@1.3.1
+      frustum-intersects: registry.npmmirror.com/frustum-intersects@0.1.0
+      rbush: registry.npmmirror.com/rbush@2.0.2
+      simplify-js: registry.npmmirror.com/simplify-js@1.2.4
+      zousan: registry.npmmirror.com/zousan@2.5.1
+    dev: false
+
   registry.npmmirror.com/memorystream@0.3.1:
     resolution: {integrity: sha512-S3UwM3yj5mtUSEfP41UZmt/0SCoVYUcU1rkXv+BQ5Ig8ndL4sPoJNBUJERafdPb5jjHJGuMgytgKvKIf58XNBw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/memorystream/-/memorystream-0.3.1.tgz}
     name: memorystream
@@ -3116,6 +3171,20 @@ packages:
     version: 1.2.3
     dev: true
 
+  registry.npmmirror.com/quickselect@1.1.1:
+    resolution: {integrity: sha512-qN0Gqdw4c4KGPsBOQafj6yj/PA6c/L63f6CaZ/DCF/xF4Esu3jVmKLUDYxghFx8Kb/O7y9tI7x2RjTSXwdK1iQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/quickselect/-/quickselect-1.1.1.tgz}
+    name: quickselect
+    version: 1.1.1
+    dev: false
+
+  registry.npmmirror.com/rbush@2.0.2:
+    resolution: {integrity: sha512-XBOuALcTm+O/H8G90b6pzu6nX6v2zCKiFG4BJho8a+bY6AER6t8uQUZdi5bomQc0AprCWhEGa7ncAbbRap0bRA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/rbush/-/rbush-2.0.2.tgz}
+    name: rbush
+    version: 2.0.2
+    dependencies:
+      quickselect: registry.npmmirror.com/quickselect@1.1.1
+    dev: false
+
   registry.npmmirror.com/read-pkg@3.0.0:
     resolution: {integrity: sha512-BLq/cCO9two+lBgiTYNqD6GdtK8s4NpaWrl6/rCO9w0TUS8oJl7cmToOZfRYllKTISY6nt1U7jQ53brmKqY6BA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/read-pkg/-/read-pkg-3.0.0.tgz}
     name: read-pkg
@@ -3301,6 +3370,12 @@ packages:
       get-intrinsic: registry.npmmirror.com/get-intrinsic@1.2.1
       object-inspect: registry.npmmirror.com/object-inspect@1.12.3
     dev: true
+
+  registry.npmmirror.com/simplify-js@1.2.4:
+    resolution: {integrity: sha512-vITfSlwt7h/oyrU42R83mtzFpwYk3+mkH9bOHqq/Qw6n8rtR7aE3NZQ5fbcyCUVVmuMJR6ynsAhOfK2qoah8Jg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/simplify-js/-/simplify-js-1.2.4.tgz}
+    name: simplify-js
+    version: 1.2.4
+    dev: false
 
   registry.npmmirror.com/slash@3.0.0:
     resolution: {integrity: sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/slash/-/slash-3.0.0.tgz}
@@ -3892,3 +3967,9 @@ packages:
     version: 0.1.0
     engines: {node: '>=10'}
     dev: true
+
+  registry.npmmirror.com/zousan@2.5.1:
+    resolution: {integrity: sha512-ZER+1EJNPHs9G3I6kTqhTmeqPjdU8XoaSIFzaUcSWmxcZBeXMuf5LM6Ih8LLNlQ46wg2Au+3ayn7KgjklVnOfA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/zousan/-/zousan-2.5.1.tgz}
+    name: zousan
+    version: 2.5.1
+    dev: false
