@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "vue.volar",
+    "vue.vscode-typescript-vue-plugin",
+    "stringham.move-ts",
+    "pmneo.tsimporter",
+    "usernamehw.errorlens"
+  ]
+}
