@@ -1,25 +1,27 @@
 import * as maptalks from "maptalks";
 import "maptalks/dist/maptalks.css";
-import { Ref, onMounted, ref } from "vue";
+import { FunctionalComponent, Ref, onMounted, ref } from "vue";
 
 export const useOfflineMap = () => {
   function initMap() {
     new maptalks.Map(mapRef.value as HTMLElement, {
-      center: [0, 0],
-      zoom: 2,
+      center: [
+        (113.157014 + 113.69204200000001) / 2,
+        (22.20103800000001 + 22.772601999999978) / 2,
+      ],
+      zoom: 11,
+      minZoom: 11,
+      maxZoom: 11,
       baseLayer: new maptalks.TileLayer("base", {
-        urlTemplate:
-          "http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png",
-        subdomains: ["a", "b", "c", "d"],
-        attribution:
-          '&copy; <a href="http://www.osm.org/copyright">OSM</a> contributors, ' +
-          '&copy; <a href="https://carto.com/attributions">CARTO</a>',
+        urlTemplate: "/tiles/{z}/{x}/{y}.png",
       }),
     });
   }
   onMounted(initMap);
   const mapRef: Ref<HTMLElement | undefined> = ref();
-  const UseOFFlineMap = () => <div style="height:100%" ref={mapRef}></div>;
+  const UseOFFlineMap: FunctionalComponent = () => (
+    <div style="height:100%" ref={mapRef}></div>
+  );
   return {
     UseOFFlineMap,
   };
