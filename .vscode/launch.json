@@ -11,6 +11,18 @@
       "runtimeExecutable": "canary",
       "url": "http://localhost:5173",
       "webRoot": "${workspaceFolder}"
+    },
+    {
+      "name": "Launch via PNPM",
+      "request": "launch",
+      "runtimeArgs": [
+        "run-script",
+        "tsnd",
+        "./packages/offline-map-server/index"
+      ],
+      "runtimeExecutable": "pnpm",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "node"
     }
   ]
 }
