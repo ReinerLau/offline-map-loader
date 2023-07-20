@@ -1,5 +1,5 @@
 import express from "express";
-import fs from "fs";
+import fs from "fs-extra";
 import multer from "multer";
 import path from "path";
 import unzipper from "unzipper";
@@ -23,7 +23,7 @@ app.post("/upload", upload.single("tiles"), (req, res, next) => {
         )
         .on("finish", () => {
           req.file &&
-            fs.unlink(req.file?.path, (err) => {
+            fs.remove(req.file?.path, (err) => {
               err && console.error(err);
               res.send("文件上传成功");
             });
@@ -60,8 +60,20 @@ function getData(directoryPath: string, preId: string) {
 
 app.get("/list", (req, res) => {
   const tilesPath = path.join(__dirname, "tiles");
-  const data: Data[] = getData(tilesPath, "tile");
+  const data: Data[] = getData(tilesPath, "tiles");
   res.json(data);
+});
+
+app.delete("/delete/:id", (req, res) => {
+  const id = req.params.id;
+  const deletePath = path.join(__dirname, id.replaceAll("_", "/"));
+  fs.remove(deletePath, (err) => {
+    if (err) {
+      err && res.status(500).send("删除失败");
+      return;
+    }
+    res.send("删除成功");
+  });
 });
 
 app.listen(3000, () => {
