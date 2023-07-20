@@ -4,6 +4,7 @@ import { FunctionalComponent, Ref, onMounted, ref } from "vue";
 
 interface Options {
   limitExtend?: boolean;
+  showGrid?: boolean;
 }
 
 export const useOfflineMap = (
@@ -29,9 +30,15 @@ export const useOfflineMap = (
     map.setMaxExtent(extent);
   }
 
+  function handleShowGrid() {
+    const baseLayer = map.getBaseLayer();
+    baseLayer.config({ debug: true });
+  }
+
   onMounted(() => {
     initMap();
     options?.limitExtend && handleLimitExtent();
+    options?.showGrid && handleShowGrid();
   });
 
   const mapRef: Ref<HTMLElement | undefined> = ref();
