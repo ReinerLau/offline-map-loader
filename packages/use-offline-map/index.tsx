@@ -12,6 +12,7 @@ export const useOfflineMap = (
   options?: Options
 ) => {
   let map: maptalks.Map;
+  let layer: maptalks.VectorLayer;
   function initMap() {
     map = new maptalks.Map(mapRef.value as HTMLElement, {
       baseLayer: new maptalks.TileLayer("base", {
@@ -19,6 +20,7 @@ export const useOfflineMap = (
       }),
       ...initMapOption,
     });
+    layer = new maptalks.VectorLayer("layer").addTo(map);
   }
 
   function getMapInstance() {
@@ -35,6 +37,12 @@ export const useOfflineMap = (
     baseLayer.config({ debug: true });
   }
 
+  function addMark(x: number, y: number) {
+    const coord = new maptalks.Coordinate({ x, y });
+    const marker = new maptalks.Marker(coord);
+    marker.addTo(layer);
+  }
+
   onMounted(() => {
     initMap();
     options?.limitExtend && handleLimitExtent();
@@ -48,5 +56,6 @@ export const useOfflineMap = (
   return {
     UseOFFlineMap,
     getMapInstance,
+    addMark,
   };
 };
