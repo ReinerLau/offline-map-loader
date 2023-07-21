@@ -1,8 +1,8 @@
 import express from "express";
 import fs from "fs-extra";
 import multer from "multer";
+import StreamZip from "node-stream-zip";
 import path from "path";
-import unzipper from "unzipper";
 
 const app = express();
 const upload = multer({
@@ -11,28 +11,20 @@ const upload = multer({
 
 app.use(express.static(__dirname));
 
-app.post("/upload", upload.single("tiles"), (req, res, next) => {
+app.post("/upload", upload.single("tiles"), async (req, res, next) => {
+  if (!req.file) {
+    res.send("失败");
+    return;
+  }
+  const zip = new StreamZip.async({ file: req.file.path });
   try {
-    req.file &&
-      fs
-        .createReadStream(req.file.path)
-        .pipe(
-          unzipper.Extract({
-            path: path.join(__dirname, "tiles"),
-          })
-        )
-        .on("finish", () => {
-          req.file &&
-            fs.remove(req.file?.path, (err) => {
-              err && console.error(err);
-              res.send("文件上传成功");
-            });
-        })
-        .on("error", () => {
-          res.send("文件上传失败");
-        });
+    await zip.extract(null, path.join(__dirname, "tiles"));
+    await zip.close();
+    fs.remove(req.file.path, () => {
+      res.send("成功");
+    });
   } catch {
-    res.send("文件上传失败");
+    res.send("失败");
   }
 });
 

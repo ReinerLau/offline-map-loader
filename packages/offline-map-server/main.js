@@ -42,9 +42,7 @@ createApp({
       const tiles = res.children
         ? getFileOrFolder(res.children).filter((item) => !item.children)
         : [res];
-      urlList.value = tiles.map(
-        (item) => `http://localhost:3000/${item.id.replaceAll("_", "/")}`
-      );
+      urlList.value = tiles.map((item) => `/${item.id.replaceAll("_", "/")}`);
       previewVisible.value = true;
     }
 
