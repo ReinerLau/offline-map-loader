@@ -1,5 +1,5 @@
 {
-  "name": "normal",
+  "name": "example",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -12,7 +12,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "use-offline-map": "workspace:^",
+    "rl-offline-map-test": "workspace:^",
     "vue": "^3.3.4"
   },
   "devDependencies": {
