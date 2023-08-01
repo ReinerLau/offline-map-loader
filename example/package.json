@@ -12,7 +12,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "rl-offline-map-test": "workspace:^",
+    "rl-offline-map": "workspace:^",
     "vue": "^3.3.4"
   },
   "devDependencies": {

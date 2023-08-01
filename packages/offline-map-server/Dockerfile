@@ -1,11 +1,12 @@
 FROM node:lts
 
-COPY . /app
+COPY dist /app/dist
+COPY package.json /app
+COPY client /app/client
+COPY node_modules /app/node_modules
 
 WORKDIR /app
 
-CMD ["npm", "start"]
+CMD ["npm", "run", "start:prod"]
 
 EXPOSE 3000
-
-
