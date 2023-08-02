@@ -1,7 +1,7 @@
 {
-  "name": "rl-offline-map",
-  "version": "1.0.3",
-  "description": "load local map tiles",
+  "name": "vue3-maptalks",
+  "version": "0.1.0",
+  "description": "load map tiles base on maptalks and vue3",
   "repository": "https://github.com/ReinerLau/offline-map-loader.git/packages/offline-map",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -9,7 +9,9 @@
     "build": "rollup -c"
   },
   "keywords": [
-    "vue"
+    "vue",
+    "maptalks",
+    "vue3"
   ],
   "author": "ReinerLau",
   "license": "MIT",

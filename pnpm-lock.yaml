@@ -8,12 +8,12 @@ importers:
 
   example:
     dependencies:
-      rl-offline-map:
-        specifier: workspace:^
-        version: link:../packages/offline-map
       vue:
         specifier: ^3.3.4
         version: 3.3.4
+      vue3-maptalks:
+        specifier: workspace:^
+        version: link:../packages/vue3-maptalks
     devDependencies:
       '@rushstack/eslint-patch':
         specifier: ^1.2.0
@@ -60,40 +60,6 @@ importers:
       vue-tsc:
         specifier: ^1.6.5
         version: 1.6.5(typescript@5.0.4)
-
-  packages/offline-map:
-    dependencies:
-      maptalks:
-        specifier: 1.0.0-rc.23
-        version: 1.0.0-rc.23
-      vue:
-        specifier: ^3.3.4
-        version: 3.3.4
-    devDependencies:
-      '@rollup/plugin-commonjs':
-        specifier: ^25.0.3
-        version: 25.0.3(rollup@3.27.0)
-      '@rollup/plugin-node-resolve':
-        specifier: ^15.1.0
-        version: 15.1.0(rollup@3.27.0)
-      '@rollup/plugin-terser':
-        specifier: ^0.4.3
-        version: 0.4.3(rollup@3.27.0)
-      '@rollup/plugin-typescript':
-        specifier: ^11.1.2
-        version: 11.1.2(rollup@3.27.0)(typescript@5.1.6)
-      '@types/maptalks':
-        specifier: ^0.49.3
-        version: 0.49.3
-      '@vitejs/plugin-vue':
-        specifier: ^4.2.3
-        version: 4.2.3(vite@4.4.6)(vue@3.3.4)
-      '@vitejs/plugin-vue-jsx':
-        specifier: ^3.0.1
-        version: 3.0.1(vite@4.4.6)(vue@3.3.4)
-      rollup:
-        specifier: ^3.27.0
-        version: 3.27.0
 
   packages/offline-map-server:
     dependencies:
@@ -264,6 +230,40 @@ importers:
       vue-tsc:
         specifier: ^1.8.6
         version: 1.8.6(typescript@5.1.6)
+
+  packages/vue3-maptalks:
+    dependencies:
+      maptalks:
+        specifier: 1.0.0-rc.23
+        version: 1.0.0-rc.23
+      vue:
+        specifier: ^3.3.4
+        version: 3.3.4
+    devDependencies:
+      '@rollup/plugin-commonjs':
+        specifier: ^25.0.3
+        version: 25.0.3(rollup@3.27.0)
+      '@rollup/plugin-node-resolve':
+        specifier: ^15.1.0
+        version: 15.1.0(rollup@3.27.0)
+      '@rollup/plugin-terser':
+        specifier: ^0.4.3
+        version: 0.4.3(rollup@3.27.0)
+      '@rollup/plugin-typescript':
+        specifier: ^11.1.2
+        version: 11.1.2(rollup@3.27.0)(typescript@5.1.6)
+      '@types/maptalks':
+        specifier: ^0.49.3
+        version: 0.49.3
+      '@vitejs/plugin-vue':
+        specifier: ^4.2.3
+        version: 4.2.3(vite@4.4.6)(vue@3.3.4)
+      '@vitejs/plugin-vue-jsx':
+        specifier: ^3.0.1
+        version: 3.0.1(vite@4.4.6)(vue@3.3.4)
+      rollup:
+        specifier: ^3.27.0
+        version: 3.27.0
 
 packages:
 

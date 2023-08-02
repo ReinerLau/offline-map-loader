@@ -1,5 +1,5 @@
 import { PropType } from "vue";
-export declare const OfflineMap: import("vue").DefineComponent<{
+export declare const MapLoader: import("vue").DefineComponent<{
     center: {
         type: PropType<[number, number]>;
         default: number[];

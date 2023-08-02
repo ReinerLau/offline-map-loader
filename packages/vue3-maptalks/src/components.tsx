@@ -1,8 +1,7 @@
 import * as maptalks from "maptalks";
-// import "maptalks/dist/maptalks.css";
 import { PropType, Ref, defineComponent, onMounted, ref } from "vue";
 
-export const OfflineMap = defineComponent({
+export const MapLoader = defineComponent({
   props: {
     center: { type: Object as PropType<[number, number]>, default: [0, 0] },
     zoom: { type: Number, default: 1 },
