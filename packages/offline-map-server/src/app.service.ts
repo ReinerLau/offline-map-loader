@@ -1,7 +1,11 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import {
+  Injectable,
+  InternalServerErrorException,
+  NotFoundException,
+} from '@nestjs/common';
 import * as fs from 'fs-extra';
+import * as StreamZip from 'node-stream-zip';
 import * as path from 'path';
-import * as unzipper from 'unzipper';
 
 export interface tileData {
   id: string;
@@ -25,6 +29,10 @@ function getData(directoryPath: string, preId: string): tileData[] {
 
 @Injectable()
 export class AppService {
+  constructor() {
+    fs.ensureDirSync(path.join(__dirname, '..', 'client', 'tiles'));
+  }
+
   findAll() {
     const tilesPath = path.join(__dirname, '..', 'client', 'tiles');
     return getData(tilesPath, 'tiles');
@@ -45,18 +53,28 @@ export class AppService {
     throw new NotFoundException('文件不存在');
   }
 
-  upload(files: Array<Express.Multer.File>) {
-    files.forEach((file) => {
-      fs.createReadStream(file.path)
-        .pipe(
-          unzipper.Extract({
-            path: path.join(__dirname, '..', 'client', 'tiles'),
-          }),
-        )
-        .on('finish', () => {
-          fs.remove(file.path);
-        });
+  async upload(files: Array<Express.Multer.File>) {
+    const fileExtractPromises = files.map((file) => {
+      return new Promise(async (resolve, reject) => {
+        const zip = new StreamZip.async({ file: file.path });
+        try {
+          await zip.extract(
+            null,
+            path.join(__dirname, '..', 'client', 'tiles'),
+          );
+          await zip.close();
+          await fs.remove(file.path);
+          resolve('success');
+        } catch {
+          reject();
+        }
+      });
     });
-    return '上传成功';
+    try {
+      await Promise.all(fileExtractPromises);
+      return '上传成功';
+    } catch {
+      throw new InternalServerErrorException('上传失败');
+    }
   }
 }

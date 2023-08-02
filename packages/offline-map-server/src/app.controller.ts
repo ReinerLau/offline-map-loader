@@ -14,7 +14,7 @@ import * as path from 'path';
 import { AppService } from './app.service';
 import { WrapResponseInterceptor } from './common/interceptors/wrap-response/wrap-response.interceptor';
 
-@Controller()
+@Controller('tiles')
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
