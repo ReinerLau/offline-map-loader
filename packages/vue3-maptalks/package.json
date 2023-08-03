@@ -11,7 +11,8 @@
   "keywords": [
     "vue",
     "maptalks",
-    "vue3"
+    "vue3",
+    "typescript"
   ],
   "author": "ReinerLau",
   "license": "MIT",
