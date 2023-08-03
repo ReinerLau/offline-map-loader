@@ -3,8 +3,10 @@ import { PropType, Ref, defineComponent, onMounted, ref } from "vue";
 
 export const MapLoader = defineComponent({
   props: {
-    center: { type: Object as PropType<[number, number]>, default: [0, 0] },
-    zoom: { type: Number, default: 1 },
+    maptalksOptions: {
+      type: Object as PropType<maptalks.MapOptions>,
+      required: true,
+    },
   },
   setup(props) {
     const mapRef: Ref<HTMLElement | undefined> = ref();
@@ -14,8 +16,7 @@ export const MapLoader = defineComponent({
         baseLayer: new maptalks.TileLayer("base", {
           urlTemplate: "/tiles/{z}/{x}/{y}.png",
         }),
-        center: props.center,
-        zoom: props.zoom,
+        ...props.maptalksOptions,
       });
     }
 

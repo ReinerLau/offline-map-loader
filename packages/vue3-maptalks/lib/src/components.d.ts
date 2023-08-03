@@ -1,23 +1,13 @@
+import * as maptalks from "maptalks";
 import { PropType } from "vue";
 export declare const MapLoader: import("vue").DefineComponent<{
-    center: {
-        type: PropType<[number, number]>;
-        default: number[];
-    };
-    zoom: {
-        type: NumberConstructor;
-        default: number;
+    maptalksOptions: {
+        type: PropType<maptalks.MapOptions>;
+        required: true;
     };
 }, () => JSX.Element, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
-    center: {
-        type: PropType<[number, number]>;
-        default: number[];
+    maptalksOptions: {
+        type: PropType<maptalks.MapOptions>;
+        required: true;
     };
-    zoom: {
-        type: NumberConstructor;
-        default: number;
-    };
-}>>, {
-    center: [number, number];
-    zoom: number;
-}, {}>;
+}>>, {}, {}>;

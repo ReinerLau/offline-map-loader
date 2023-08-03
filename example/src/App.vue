@@ -8,5 +8,5 @@ const center: Ref<[number, number]> = ref([x, y])
 </script>
 
 <template>
-  <MapLoader :center="center" :zoom="11"></MapLoader>
+  <MapLoader :maptalks-options="{ center, zoom: 11 }"></MapLoader>
 </template>
