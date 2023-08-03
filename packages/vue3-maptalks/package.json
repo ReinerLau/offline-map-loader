@@ -1,8 +1,8 @@
 {
   "name": "vue3-maptalks",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "load map tiles base on maptalks and vue3",
-  "repository": "https://github.com/ReinerLau/offline-map-loader.git/packages/offline-map",
+  "repository": "https://github.com/ReinerLau/offline-map-loader.git/packages/vue3-maptalks",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
